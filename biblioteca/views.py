@@ -63,11 +63,11 @@ def mensagem(request):
     return render(request, "mensagem.html")
 
 def ListaLivro(request):
-    livros=Livro.objects.all()
+    livros=Livro.objects.all().order_by('titulo')
     return render(request, 'lista_livros.html', {'livros': livros})
 
 def ListaCliente(request):
-    clientes=Cliente.objects.all()
+    clientes=Cliente.objects.all().order_by('nome')
     return render(request, 'lista_clientes.html', {'clientes': clientes})
 
 def ListaAlugueis(request):
